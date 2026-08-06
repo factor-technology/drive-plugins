@@ -1,0 +1,8 @@
+source: drive-app/agent/geosteering-agent.md
+source_commit: c6d7200d977aaa2b55ac00f44231e04f73960d85
+source_commit_short: c6d7200d977a
+source_commit_date: 2026-08-05T21:58:38-05:00
+source_commit_subject: Package the skill and the remote connector as one .plugin
+skill_version: 0.4.39
+built_at: 2026-08-05T22:09:51-05:00
+built_from_workspace_dirty: false

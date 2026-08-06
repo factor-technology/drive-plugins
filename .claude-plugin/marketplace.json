@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "factor-drive",
+  "description": "Factor Drive geosteering copilot for Claude — the interpretation skill paired with a live connector to your Drive projects.",
+  "owner": {
+    "name": "Factor Technology",
+    "url": "https://factor.technology"
+  },
+  "plugins": [
+    {
+      "name": "geosteering-agent",
+      "source": "./plugins/geosteering-agent",
+      "description": "Factor Drive geosteering copilot — the interpretation skill plus the Drive tool connector (production). Project setup, pilot/active logs, alignment, dip & faults, job runs, and WITSML.",
+      "author": {
+        "name": "Factor Technology"
+      },
+      "category": "productivity",
+      "keywords": [
+        "geosteering",
+        "drive",
+        "petroleum",
+        "well-log",
+        "mcp"
+      ],
+      "homepage": "https://drive.factor.technology"
+    },
+    {
+      "name": "geosteering-agent-dev",
+      "source": "./plugins/geosteering-agent-dev",
+      "description": "INTERNAL (the dev backend) — not for customers. Factor Drive geosteering copilot — the interpretation skill plus the Drive tool connector (the dev backend). Project setup, pilot/active logs, alignment, dip & faults, job runs, and WITSML.",
+      "author": {
+        "name": "Factor Technology"
+      },
+      "category": "productivity",
+      "keywords": [
+        "geosteering",
+        "drive",
+        "petroleum",
+        "well-log",
+        "mcp"
+      ],
+      "homepage": "https://drive-app-dev.factor.technology"
+    }
+  ]
+}
