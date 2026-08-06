@@ -10,7 +10,7 @@ and there is no key to paste — you sign in to Drive the first time a tool runs
 | `geosteering-agent` | https://drive.factor.technology |
 | `geosteering-agent-dev` | https://drive-app-dev.factor.technology |
 
-Current release: **0.4.39**.
+Current release: **0.4.40**.
 
 ## Install
 

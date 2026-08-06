@@ -62,7 +62,8 @@ marked **local** are absent from the remote connector's list (§1.1):
   `read_marginal`, `read_mpe_slice`, `get_operation_status`
 - Project inspection: `read_project`, `read_job_params`, `read_user_prior`,
   `read_structure`, `read_fit_params`, `read_pilot_well_markers`,
-  `read_active_trajectory`, `read_interpretation`, `read_target_line`,
+  `read_active_trajectory`, `read_well_plan`, `read_active_log`,
+  `read_pilot_log`, `read_interpretation`, `read_target_line`,
   `list_projects`, `list_pilot_wells`, `list_interpretations`
 - Project lifecycle: `create_project`, `copy_project`, `delete_project`,
   `update_project`
@@ -88,7 +89,7 @@ marked **local** are absent from the remote connector's list (§1.1):
   `rename_interpretation`, `delete_interpretation`,
   `copy_computed_interpretation`
 - Target line: `set_target_line`, `delete_target_line`
-- Background (seismic) image: `upload_seismic_image`,
+- Background (seismic) image: `read_seismic_image`, `upload_seismic_image`,
   `set_seismic_image_registration`, `delete_seismic_image`
 - WITSML: `list_witsml_servers`, `add_witsml_server`,
   `start_refresh_witsml_server`, `refresh_witsml_server` (**local**),
