@@ -1,7 +1,7 @@
 {
   "name": "geosteering-agent",
-  "version": "0.4.40",
-  "description": "Factor Drive geosteering copilot — the interpretation skill plus the Drive tool connector (production). Project setup, pilot/active logs, alignment, dip & faults, job runs, and WITSML.",
+  "version": "0.4.43",
+  "description": "Factor Drive geosteering copilot — the interpretation skill, the cross-section scene-setup skill, and the Drive tool connector (production). Project setup, pilot/active logs, alignment, dip & faults, job runs, and WITSML.",
   "author": {
     "name": "Factor Technology"
   },
@@ -12,6 +12,7 @@
     "drive",
     "petroleum",
     "well-log",
+    "cross-section",
     "mcp"
   ]
 }

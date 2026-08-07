@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "factor-drive": {
-      "type": "http",
-      "url": "https://drive-app-dev.factor.technology/mcp"
-    }
-  }
-}

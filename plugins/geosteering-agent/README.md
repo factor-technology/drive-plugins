@@ -23,6 +23,10 @@ Drive and approve the fuller set — that is the whole fix, not a support case.
 - **The geosteering skill** — how to read job results, judge an
   interpretation, set a project up (pilot wells, markers, alignment, dip,
   faults), and tune a run.
+- **The cross-section skill** — drives your browser to frame and tidy a
+  project's Profile scene ("make U-178 look good for the morning meeting")
+  and capture a presentable image. Needs Claude's browser access; sits idle
+  without it.
 - **The Drive tools** — the actions you would otherwise take in the Drive web
   UI at `https://drive.factor.technology`.
 
@@ -36,5 +40,5 @@ the separate `drive-mcp` install, which does require a token.
 
 ---
 
-`geosteering-agent` 0.4.40 · connector `https://drive.factor.technology/mcp` ·
+`geosteering-agent` 0.4.43 · connector `https://drive.factor.technology/mcp` ·
 built from the drive-app monorepo with `yarn workspace agent build:plugin`.

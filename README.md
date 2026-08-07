@@ -1,22 +1,22 @@
 # Factor Drive plugins for Claude
 
 A Claude plugin marketplace published by [Factor Technology](https://factor.technology).
-It carries the **geosteering copilot**: the interpretation skill plus a live
-connector to your Factor Drive projects. Nothing is installed on your machine
-and there is no key to paste — you sign in to Drive the first time a tool runs.
+It carries the **geosteering copilot**: the interpretation skill, the
+cross-section scene-setup skill, plus a live connector to your Factor Drive
+projects. Nothing is installed on your machine and there is no key to paste —
+you sign in to Drive the first time a tool runs.
 
 | Plugin | Connects to |
 | --- | --- |
 | `geosteering-agent` | https://drive.factor.technology |
-| `geosteering-agent-dev` | https://drive-app-dev.factor.technology |
 
-Current release: **0.4.40**.
+Current release: **0.4.43**.
 
 ## Install
 
 **Claude Desktop / Cowork** — Settings → Extensions → Plugins → **Add
-marketplace**, enter `factor-technology/drive-plugins`, then install **geosteering-agent** from the
-list.
+marketplace**, enter `factor-technology/drive-plugins`, then install **geosteering-agent**
+from the list.
 
 **Claude Code**
 
