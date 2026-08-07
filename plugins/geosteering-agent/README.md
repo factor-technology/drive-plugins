@@ -40,5 +40,5 @@ the separate `drive-mcp` install, which does require a token.
 
 ---
 
-`geosteering-agent` 0.4.43 · connector `https://drive.factor.technology/mcp` ·
+`geosteering-agent` 0.4.44 · connector `https://drive.factor.technology/mcp` ·
 built from the drive-app monorepo with `yarn workspace agent build:plugin`.
