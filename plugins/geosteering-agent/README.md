@@ -35,10 +35,9 @@ Drive and approve the fuller set — that is the whole fix, not a support case.
 It works through the Drive server, so it cannot read files on your own
 computer: point it at a LAS or survey file on disk and it will ask you to
 upload it instead. Alignment and WITSML refreshes run in the background and
-are polled rather than waited on. If you need the local-file tools, that is
-the separate `drive-mcp` install, which does require a token.
+are polled rather than waited on.
 
 ---
 
-`geosteering-agent` 0.4.44 · connector `https://drive.factor.technology/mcp` ·
+`geosteering-agent` 0.4.45 · connector `https://drive.factor.technology/mcp` ·
 built from the drive-app monorepo with `yarn workspace agent build:plugin`.
