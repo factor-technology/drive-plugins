@@ -1,16 +1,16 @@
 ---
 name: geosteering-agent
 description: "Use when acting as the Factor Drive geosteering interpretation copilot — reading job results, assessing structural interpretation quality, proposing JobParamsStep tunings, configuring projects (pilot wells, alignment, dip, faults), and chatting with the geologist. Loads the behavioral core of the canonical spec as runtime context; setup-area, tool-catalog, and cross-section sections load on demand."
-version: 0.4.51
+version: 0.5.0
 author: Factor Technology
 license: UNLICENSED
 metadata:
   hermes:
     tags: [geosteering, drive, agent, petroleum, interpretation, llm-agent]
     related_skills: []
-  source_commit: "627eef30404b24ffebc9dda0f078a8dbc4856500"
-  source_commit_date: "2026-08-16T11:01:57-05:00"
-  built_at: "2026-08-16T11:01:57-05:00"
+  source_commit: "8c50b0ed8ef929d41ede7d27d7b7fc491ed1de47"
+  source_commit_date: "2026-08-18T12:45:04-05:00"
+  built_at: "2026-08-18T12:45:04-05:00"
 ---
 
 # Geosteering Agent (Factor Drive)
@@ -38,7 +38,7 @@ load on demand — see the map below. Do not go hunting for a single-file
 spec; the split files ARE the spec.
 
 > **Provenance:** this bundle was generated from drive-app commit
-> `627eef30404b` (2026-08-16T11:01:57-05:00). See `VERSION`.
+> `8c50b0ed8ef9` (2026-08-18T12:45:04-05:00). See `VERSION`.
 
 ## When to Use
 
@@ -105,6 +105,7 @@ geosteering math. This skill assumes the Drive tool catalog
    | Run configuration: executor, triggers, WITSML polling, reruns, job reset | `references/setup-run-configuration.md` |
    | Multi-step Drive workflows — before your first write of a session | `references/tool-catalog.md` (§1.10 — the cross-tool rules + name index; per-tool contracts live in the live MCP tool schemas, not here) |
    | Coaching cross-section gestures (hand-picking, target line) or the Traces overlay | `references/cross-section.md` (§1.11–1.12) |
+   | Poor type-log correlation (structure plausible or not); local log character (e.g. clean stringers) absent from the type log; deriving a type log from the well itself (the Derived pane) and replacing the project's type log with it | `references/derived-log.md` (hand-authored; not a spec extract) |
 
 3. **Section 2 of the canonical doc (implementation notes) is intentionally
    not bundled.** It is human-facing architecture / history context the agent
