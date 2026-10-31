@@ -39,5 +39,5 @@ are polled rather than waited on.
 
 ---
 
-`geosteering-agent` 0.5.73 · connector `https://drive.factor.technology/mcp` ·
+`geosteering-agent` 0.5.75 · connector `https://drive.factor.technology/mcp` ·
 built from the drive-app monorepo with `yarn workspace agent build:plugin`.
