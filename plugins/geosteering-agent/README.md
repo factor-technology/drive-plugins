@@ -64,5 +64,5 @@ geologist.
 
 ---
 
-`geosteering-agent` 0.5.76 · connector `https://drive.factor.technology/mcp` ·
+`geosteering-agent` 0.5.77 · connector `https://drive.factor.technology/mcp` ·
 built from the drive-app monorepo with `yarn workspace agent build:plugin`.
