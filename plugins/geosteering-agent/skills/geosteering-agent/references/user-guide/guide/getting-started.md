@@ -12,10 +12,9 @@ This walkthrough takes a new project from creation to a computed interpretation.
 
 ## 1 · Create the project
 
-On the [Projects page](./projects-page.md), choose **Add Project**. Pick an owner (yourself, or a group you can write to), a unique name, an optional description, the **Spatial Measurements** unit (feet or meters), and a setup style:
+On the [Projects page](./projects-page.md), choose **Add Project**. On the New project page pick an owner (yourself, or a group you can write to), a unique name, an optional description, and the **Spatial Measurements** unit (feet or meters), then press **Create project**. The new project opens on its Setup tab.
 
-- **Full** — the six-step wizard described below. Recommended.
-- **Quick** — a single page: upload the pilot log and the active well's files, optionally type one formation top with the VS azimuth and dip, and run. Drive aligns the logs for you. Good for a fast trial.
+The Setup tab guides you through the six stages below; the All options link under each stage's title opens the full panel described here, and **Back to the guide**, in the same place, returns to the questions. The **Guided | All options** control at the top of the Setup rail opens every stage on its full panel.
 
 ## 2 · Pilot well
 
@@ -23,11 +22,11 @@ In [Setup step 1](./setup/pilot-well.md), upload the pilot's LAS file and pick t
 
 ## 3 · Active well
 
-In [Setup step 2](./setup/active-well.md), choose a data source:
+In [Setup step 2](./setup/active-well.md), say whether you have a well plan (on a well still to be drilled it lets Drive lay out the cross section before the first survey arrives), then choose a data source:
 
-- **Manual File Upload** — upload the trajectory CSV and the LAS gamma log (and optionally a well plan).
-- **WITSML Connection** — pick a server, well, wellbore, trajectory, and log curve. Polling starts paused; you start it on the Run Job step.
-- **Email** — generate a project email address and have your data provider send LAS/CSV/Excel attachments to it.
+- **Manual File Upload**: upload the trajectory CSV and the LAS gamma log (and optionally a well plan).
+- **WITSML Connection**: pick a server, well, wellbore, trajectory, and log curve. Polling will start once the well is set to receive data, and the project will run by itself once its Automatic runs are on; the first Run on the Run Job step can turn them on.
+- **Email**: generate the well's email address and have your MWD provider send LAS/CSV/Excel attachments to it.
 
 ## 4 · Dip and azimuth
 
@@ -49,4 +48,4 @@ In [Setup step 6](./setup/run-job.md), check the readiness message above the but
 
 On the [Profile tab](./profile.md), open **Interpretations** and switch between the **MPE** and the auto-picked alternatives (P1, P2, …); open **Marginals** to see the per-depth probability field. [Understanding the Results](./results.md) explains what you are looking at.
 
-As drilling progresses, new data extends the interpretation: once started, WITSML polling and email ingestion trigger extensions automatically, and manual uploads followed by **Extend** do the same.
+As drilling progresses, new data extends the interpretation: a project with Automatic runs on will extend by itself when WITSML or email data arrives; otherwise, press **Extend** after new data, as after a manual upload.

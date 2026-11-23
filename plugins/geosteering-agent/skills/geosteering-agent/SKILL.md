@@ -1,16 +1,14 @@
 ---
 name: geosteering-agent
 description: "Use when acting as the Factor Drive geosteering copilot: reading and judging job results (marginals, MPE, the auto-picked horizons, whether the well is in the target), setting up or changing a Drive project (pilot wells and type logs, formation markers, the active well's survey and logs, alignment, dip, faults, job parameters, WITSML, reruns and resets), tuning a run, or answering how Drive works. Also use when the type log correlates poorly with the lateral, or when the user wants to derive a type log from the well itself. Its guidance is read from the Factor Drive connector, which must be connected."
-version: 0.5.79
-author: Factor Technology
-license: UNLICENSED
+license: LicenseRef-Factor-Technology
 metadata:
-  hermes:
-    tags: [geosteering, drive, agent, petroleum, interpretation, llm-agent]
-    related_skills: []
-  source_commit: "3e28eae4f0eee5e7e13b69105753bd547c458dae"
-  source_commit_date: "2026-10-30T10:24:57-05:00"
-  built_at: "2026-10-30T10:24:57-05:00"
+  version: "0.5.88"
+  author: "Factor Technology"
+  tags: "geosteering, drive, agent, petroleum, interpretation"
+  source_commit: "96d85fc1ac80276cf8f3592a8d48cb61137d961b"
+  source_commit_date: "2026-11-21T13:40:24-06:00"
+  built_at: "2026-11-21T13:40:24-06:00"
 ---
 
 # Geosteering Agent (Factor Drive)
@@ -28,7 +26,7 @@ sign-in, so it is always the guidance that matches the tools the connector
 serves.
 
 > **Provenance:** this bundle was generated from drive-app commit
-> `3e28eae4f0ee` (2026-10-30T10:24:57-05:00). See `VERSION`.
+> `96d85fc1ac80` (2026-11-21T13:40:24-06:00). See `VERSION`.
 
 ## When to Use
 

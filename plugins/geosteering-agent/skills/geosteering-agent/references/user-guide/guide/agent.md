@@ -15,8 +15,11 @@ Nothing installs on your machine and there is no token to paste. The first use o
 
 ### Claude
 
-- **Claude for Teams or Enterprise.** An organization owner adds the `factor-drive` custom connector (the URL above) under **Organization settings → Connectors**, then distributes the **Geosteering agent** plugin from the `factor-technology/drive-plugins` GitHub repository under **Organization settings → Plugins → GitHub Sync**. Each member then opens **Customize → Connectors**, finds **factor-drive**, clicks **Connect**, and allows it in the browser.
-- **Individual plans.** **Customize → Plugins → Add → Add marketplace → Add from a repository**, enter `factor-technology/drive-plugins`, and sync. Install **Geosteering agent**, open its settings, and on the **Connectors** tab install and **Connect** factor-drive; allow it in the browser.
+Factor Drive is listed in Anthropic's connector directory, and the listing carries the connector and the skills together. Open [Factor Drive in the directory](https://claude.ai/customize/connectors/id/factor-drive) (or go to **Customize → Connectors** and search for *Factor Drive*), click **Connect**, and allow it in the browser window that opens.
+
+On Claude for Teams or Enterprise, an organization owner may first have to enable Factor Drive for the organization under **Organization settings → Connectors**; members then connect it as above.
+
+If you installed the agent earlier from the `factor-technology/drive-plugins` marketplace or added `factor-drive` as a custom connector, remove those once the directory version is connected, so the tools do not appear twice.
 
 Optionally, on the factor-drive connector set its two tool-permission groups — **Read-only tools** and **Write/delete tools** — from *Needs approval* to *Always allow*, so Claude does not pause before each Drive operation.
 
@@ -24,10 +27,9 @@ Optionally, on the factor-drive connector set its two tool-permission groups —
 
 ChatGPT takes the connector but not the skill, so there are no slash commands; ask in plain language and the agent works the same way.
 
-1. Turn on **Developer mode**: **Settings → Apps & Connectors → Advanced settings** (OpenAI has moved this toggle; if it is not there, look under **Settings → Security**). Custom connectors are gated by plan, and on a Business, Enterprise, or Edu workspace an administrator may have to enable them.
-2. **Settings → Apps & Connectors → Create**. Name it `factor-drive`, enter the `/mcp` URL above, and leave authentication as OAuth with no client ID or secret. ChatGPT discovers the sign-in flow on its own.
-3. Sign in to Drive in the browser window that opens and allow the permissions.
-4. In a conversation, enable **factor-drive** from the tools menu (the **+** button) and ask away.
+1. Install **Factor Drive** from the ChatGPT app directory.
+2. Sign in to Drive in the browser window that opens and allow the permissions.
+3. In a conversation, enable **Factor Drive** from the tools menu (the **+** button) and ask away.
 
 ### Other hosts
 

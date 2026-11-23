@@ -2,25 +2,37 @@
 
 # Step 2 · Active Well
 
-The second step loads the well being drilled: its survey trajectory and its LWD gamma-ray log, plus an optional well plan.
+The second step loads the well being drilled: its survey trajectory and its LWD gamma-ray log, plus an optional well plan. The guided stage first asks whether you have a well plan: on a well still to be drilled, the plan lets Drive lay out the cross section and set the VS azimuth before the first survey arrives. The computation never uses it, so a resteer of a finished well can answer No.
 
-Two status boxes at the top, **Trajectory** and **Active Log**, show whether each is loaded, with details and a delete control. In Manual mode they also hold the upload buttons.
+The **Data stored on the well** table has a row each for the **Trajectory**, the **Active Log** and the **Well Plan**: whether it is loaded, a summary, and a delete control. While the well's data source is manual file upload or email, the Trajectory and Active Log rows also hold their upload buttons. The last row is the reference elevation.
 
-**Reference elevation** — optionally set the active well's datum elevation. Leave it at 0 to work in plain TVD; set it if you want depths referenced subsea (TVDSS), for example to compare against a regional structure map.
+The well has its own name, which you can rename with Write access to the well (it renames the well for every project that uses it). Several projects can use the same well and then share its survey, gamma log, well plan and reference elevation. Changing them needs Write access to the well, and changes them for every project on it; with Read access you can run the project but not change the well's data. Uploading a survey or log starts no run by itself; on a well that is receiving data, projects with Automatic runs on will run at the source's next delivery. A mailed file that would change the stations you uploaded will be refused and will start no run; the projects will run again with the first mail that only extends your upload. A file that only extends what is stored extends the well, for every project on it. One that changes stations already stored is a revision: when a project on the well has results, Drive asks you to confirm it. Projects on the well with Automatic runs on will then reset and rerun at the source's next delivery; the others will show that the well was revised, and wait for **Reset and Run**. With Admin access to the well, the Well access button beside its name shows who has access and which projects use it, and lets you add, change or remove a person.
+
+## The well
+
+This step shows the well as its own object. Its name is at the top, with who can access it. The **Data source** box follows: the three data sources as cards, the **Receiving data** switch, and a small table of the source's status and settings. The **Projects on this well** table is at the bottom. Each project reads **not run**, **current**, **behind** (the well has data past its last run) or **stale** (the well's data was revised after its last run), with whether its Automatic runs are on. You will see the names of the projects you can open, and a count of the others. The source's settings, its address and allowed senders need Write access to the well.
+
+**Reference elevation** — the height of the active well's depth reference (KB or rig floor) above sea level. Enter it to work in subsea depths (TVDSS), which line up with subsea maps, structure files and interpretations. Leave it at 0 only if you don't have it or don't need subsea depths; depths then read below the rig (TVD). Set it before you align the logs: alignment centers on it, so changing it later means aligning again.
 
 ## Data sources
 
-Drive ingests active-well data three ways; pick a tab. Switching tabs keeps the data you already loaded, but it changes what is live: leaving the WITSML tab turns its pollers off, and entering the Email tab turns email ingestion on.
+Drive takes active-well data three ways, one card each in the **Data source** box at the top of the step. The data source belongs to the well: one source for every project on it. The checked card is the well's data source. To change it, choose another card and confirm, with Write access to the well. The change will keep the data already loaded and will turn **Receiving data** off: turn it on, under the cards, once the source is set up.
+
+Under the cards the step shows the settings of the well's data source only. Once a source is set up, its settings fold into the small table; press **Change the WITSML connection** or **Change the email settings** to open the form again.
+
+**Receiving data** is the well's one switch for WITSML and email. While it is off, Drive will not poll the WITSML server, and mail sent to the well's address will not be stored on the well. Your own uploads will be stored either way. A pause will take effect at once, with no question, and will stop new data for every project on the well. To stop only this project from running by itself, turn off its [Automatic runs](./run-job.md#automatic-runs) instead.
+
+On a well that only this project uses, the guided stage's source question is the same choice. On a shared well the question is locked, and the change is made here. A project cloned onto a new well, or imported, starts at manual file upload.
 
 ### Manual file upload
 
-- **Upload Trajectory…** (in the Trajectory box) — a CSV with at least MD, inclination, and azimuth columns; the *Define Trajectory Input* dialog maps the columns. Each upload replaces the whole trajectory, so re-upload the full file as the well grows.
-- **Upload LAS File…** (in the Active Log box) — the LWD gamma log; pick the gamma curve mnemonic in the *Define Log Curve Input: Active* dialog, and optionally tick **Apply despiking filter.** with a window length in samples. Also full-replace.
-- **Upload Well Plan…** — optional CSV of the planned path. The plan is a visual aid on the cross section; it is not used by the computation.
+- **Upload Trajectory…** (in the Trajectory row) — a CSV with at least MD, inclination, and azimuth columns; the *Define Trajectory Input* dialog maps the columns. Each upload will replace the whole trajectory, so re-upload the full file as the well grows.
+- **Upload LAS File…** (in the Active Log row) — the LWD gamma log; pick the gamma curve mnemonic in the *Define Log Curve Input: Active* dialog, and optionally tick **Apply despiking filter.** with a window length in samples. Also full-replace.
+- **Upload Well Plan…** (in the Well Plan row, under every data source) — optional CSV of the planned path. The plan is drawn on the cross section beyond the last survey station and is Drive's first source for the suggested VS azimuth and dip; it is not used by the computation.
 
 ### WITSML connection
 
-Drive polls a WITSML server every ten minutes for new trajectory and log data and extends the interpretation as data arrives. Servers are registered on your [WITSML Servers page](../../admin/witsml.md); here, select the server, then drill down: well → wellbore → trajectory and log → curves.
+While the well is receiving data, Drive polls a WITSML server every ten minutes for new trajectory and log data and stores it on the well; projects with Automatic runs on will extend as it arrives. Servers are registered on your [WITSML Servers page](../../admin/witsml.md); here, select the server, then drill down: well → wellbore → trajectory and log → curves.
 
 Settings of note:
 
@@ -31,12 +43,8 @@ Settings of note:
 | **Mnemonic** | The gamma-ray curve to ingest (optionally with a separate depth-index curve). |
 | **Splice Overlap (ft)** | How each fetch joins the stored data: empty replaces it entirely, 0 appends, and a positive value replaces the stored data over that overlap. |
 
-Polling starts paused; start it on the [Run Job step](./run-job.md#live-updates). **Refresh Log and Trajectory** fetches the latest data once, without running the job. If a well or curve you expect is missing from the pulldowns, refresh the server on the WITSML Servers page so Drive re-reads its well list.
+Saving these settings needs Write access to the well and a WITSML server of your own, and starts no polling: polling will start once **Receiving data** is on. Press **Refresh Log and Trajectory**, at the top of the data table, to fetch the latest data once, without running any job, whether or not the well is receiving. If a well or curve you expect is missing from the pulldowns, refresh the server on the WITSML Servers page so Drive re-reads its well list.
 
 ### Email
 
-Drive can receive data by email. **Generate Address** creates a project email address (or **Subscribe** to an existing one), then set the **Curve Mnemonic** to extract and, optionally, the **Allowed Senders** — leave it empty to accept mail from anyone — and press **Save Configuration**. LAS attachments (logs) and CSV or Excel attachments (trajectories) sent to that address are ingested automatically and the interpretation extends. **Upload Initial Trajectory...** seeds the column layout. Email updates can be paused and resumed here or on the Run Job step.
-
-## Ignore LWD ranges
-
-If a stretch of the active log is unusable — a tool malfunction, an obvious spike — press **Ignore…** and define **Ignore Log Ranges**: MD intervals the computation skips without editing the raw log. Use ignore ranges for bad data; use tolerances (Step 5) for data that is merely noisy.
+Drive can receive data by email, at one address per well. Press **Generate Address** to create one for the well (or **Subscribe** to an address another well uses), then set the **Curve Mnemonic** to extract and, optionally, the **Allowed Senders** (leave it empty to accept mail from anyone), and press **Save Configuration**. To set the column layout of emailed surveys, use **Upload Initial Trajectory...**, the third part of the email settings. Once the address is set up it shows under the cards, with a copy control, ready to hand to your MWD provider. These settings need Write access to the well. Drive will store mail in the name of the person who last saved them. While email is the well's data source and **Receiving data** is on, LAS attachments (logs) and CSV or Excel attachments (trajectories) sent to that address will be stored on the well. Mail that arrives while it is off will not be stored. Whether this project runs on new mail is its own [Automatic runs](./run-job.md#automatic-runs) switch.
